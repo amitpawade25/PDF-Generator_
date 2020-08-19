@@ -1,0 +1,147 @@
+﻿@model IEnumerable<StudentInfoApi.Models.Student>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AdmissionNum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nationality)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MotherTongue)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Religion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cast)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Subcast)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BirthPlace)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DOB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DOBInWords)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PreviousSchoolName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdmittedInClass)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdmissionDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Progess)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Conduct)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfSchoolLeaving)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SchholLeftAtClass)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReasonForLeavingSchool)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CertificateRecivedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReceivedBy)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdmissionNum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nationality)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MotherTongue)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Religion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cast)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Subcast)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BirthPlace)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DOB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DOBInWords)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PreviousSchoolName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdmittedInClass)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdmissionDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Progess)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Conduct)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateOfSchoolLeaving)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SchholLeftAtClass)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReasonForLeavingSchool)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CertificateRecivedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReceivedBy)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

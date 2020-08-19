@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="StudentInfoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Student">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AdmissionNum" Type="int" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Nationality" Type="nvarchar" MaxLength="50" />
+          <Property Name="MotherTongue" Type="nvarchar" MaxLength="50" />
+          <Property Name="Religion" Type="nchar" MaxLength="10" />
+          <Property Name="Cast" Type="nvarchar" MaxLength="50" />
+          <Property Name="Subcast" Type="nvarchar" MaxLength="50" />
+          <Property Name="BirthPlace" Type="nvarchar" MaxLength="50" />
+          <Property Name="DOB" Type="date" />
+          <Property Name="DOBInWords" Type="nvarchar(max)" />
+          <Property Name="PreviousSchoolName" Type="nvarchar(max)" />
+          <Property Name="AdmittedInClass" Type="nvarchar" MaxLength="50" />
+          <Property Name="AdmissionDate" Type="date" />
+          <Property Name="Progess" Type="nvarchar" MaxLength="50" />
+          <Property Name="Conduct" Type="nvarchar" MaxLength="50" />
+          <Property Name="DateOfSchoolLeaving" Type="date" />
+          <Property Name="SchholLeftAtClass" Type="nvarchar" MaxLength="50" />
+          <Property Name="ReasonForLeavingSchool" Type="nvarchar(max)" />
+          <Property Name="CertificateRecivedDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="ReceivedBy" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityContainer Name="StudentInfoModelStoreContainer">
+          <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="StudentInfoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Student">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AdmissionNum" Type="Int32" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Nationality" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MotherTongue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Religion" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Cast" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Subcast" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BirthPlace" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DOB" Type="DateTime" Precision="0" />
+          <Property Name="DOBInWords" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PreviousSchoolName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AdmittedInClass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AdmissionDate" Type="DateTime" Precision="0" />
+          <Property Name="Progess" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Conduct" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DateOfSchoolLeaving" Type="DateTime" Precision="0" />
+          <Property Name="SchholLeftAtClass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ReasonForLeavingSchool" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CertificateRecivedDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ReceivedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="StudentDbContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Students" EntityType="Self.Student" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="StudentInfoModelStoreContainer" CdmEntityContainer="StudentDbContext">
+          <EntitySetMapping Name="Students">
+            <EntityTypeMapping TypeName="StudentInfoModel.Student">
+              <MappingFragment StoreEntitySet="Student">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="AdmissionNum" ColumnName="AdmissionNum" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+                <ScalarProperty Name="MotherTongue" ColumnName="MotherTongue" />
+                <ScalarProperty Name="Religion" ColumnName="Religion" />
+                <ScalarProperty Name="Cast" ColumnName="Cast" />
+                <ScalarProperty Name="Subcast" ColumnName="Subcast" />
+                <ScalarProperty Name="BirthPlace" ColumnName="BirthPlace" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="DOBInWords" ColumnName="DOBInWords" />
+                <ScalarProperty Name="PreviousSchoolName" ColumnName="PreviousSchoolName" />
+                <ScalarProperty Name="AdmittedInClass" ColumnName="AdmittedInClass" />
+                <ScalarProperty Name="AdmissionDate" ColumnName="AdmissionDate" />
+                <ScalarProperty Name="Progess" ColumnName="Progess" />
+                <ScalarProperty Name="Conduct" ColumnName="Conduct" />
+                <ScalarProperty Name="DateOfSchoolLeaving" ColumnName="DateOfSchoolLeaving" />
+                <ScalarProperty Name="SchholLeftAtClass" ColumnName="SchholLeftAtClass" />
+                <ScalarProperty Name="ReasonForLeavingSchool" ColumnName="ReasonForLeavingSchool" />
+                <ScalarProperty Name="CertificateRecivedDate" ColumnName="CertificateRecivedDate" />
+                <ScalarProperty Name="ReceivedBy" ColumnName="ReceivedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
